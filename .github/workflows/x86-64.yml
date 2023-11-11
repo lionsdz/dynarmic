@@ -100,7 +100,7 @@ jobs:
           DYLD_FALLBACK_LIBRARY_PATH: ${{github.workspace}}/externals/unicorn
         working-directory: ${{github.workspace}}/build
         run: ctest --extra-verbose -C ${{env.BUILD_TYPE}}
-      - name: Upload Artifact
+      - name: Upload build
         uses: actions/upload-artifact@master
         with:
           name: libdynarmic
