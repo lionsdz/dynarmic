@@ -1,6 +1,8 @@
 name: x86-64
 
-on: [ push, pull_request ]
+on:
+  issue_comment:
+    types: [build]
 
 env:
   BUILD_TYPE: Release
@@ -101,7 +103,7 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: ctest --extra-verbose -C ${{env.BUILD_TYPE}}
       - name: Upload build
-        uses: actions/upload-build@master
+        uses: actions/upload-artifact@master
         with:
           name: libdynarmic
           path: ${{github.workspace}}/build/
