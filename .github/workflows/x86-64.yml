@@ -101,7 +101,7 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: ctest --extra-verbose -C ${{env.BUILD_TYPE}}
       - name: Upload build
-        uses: actions/upload-artifact@master
+        uses: actions/upload-build@master
         with:
           name: libdynarmic
           path: ${{github.workspace}}/build/
