@@ -1,8 +1,6 @@
 name: x86-64
 
-on:
-  issue_comment:
-    types: [build]
+on: [ push, pull_request ]
 
 env:
   BUILD_TYPE: Release
