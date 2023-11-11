@@ -104,4 +104,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: libdynarmic
-          path: ./artifact/
+          path: ${{github.workspace}}/build/
